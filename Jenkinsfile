@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label '11.0.12'
+  }
   stages {
     stage('Say Hello') {
       steps {
