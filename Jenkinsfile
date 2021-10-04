@@ -4,7 +4,7 @@ pipeline {
     stage('Say Hello') {
       steps {
         echo "Hello ${MY_NAME}!"
-        echo "${ADMIN_USER_USR}"
+        echo "${TEST_USER_USR}"
         sh 'java -version'
       }
     }
@@ -12,6 +12,9 @@ pipeline {
   }
   environment {
     MY_NAME = 'Alex'
-    ADMIN_USER = credentials('admin')
+    ADMIN_USER = credentials('test-user')
+  }
+  parameters {
+    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
