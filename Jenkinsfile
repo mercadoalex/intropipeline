@@ -66,6 +66,10 @@ pipeline {
     OUTPUT_PATH = './tmp'
   }
   post {
+    aborted {
+      echo 'No termino de correr el pipeline fue forzado a terminar'
+    }
+
     always {
       echo 'El Pipeline termino exitosamente'
     }
