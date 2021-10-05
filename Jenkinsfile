@@ -74,5 +74,9 @@ pipeline {
       echo 'El Pipeline termino exitosamente'
     }
 
+    failure {
+      echo 'Algo fallo'
+    }
+
   }
 }
