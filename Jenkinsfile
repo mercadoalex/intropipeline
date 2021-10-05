@@ -1,6 +1,23 @@
 pipeline {
   agent any
   stages {
+    stage('corriendo en paralelo') {
+      parallel {
+        stage('a') {
+          steps {
+            echo 'Test en paralelo en Linux'
+          }
+        }
+
+        stage('b') {
+          steps {
+            echo 'Test en paralelo en Windows'
+          }
+        }
+
+      }
+    }
+
     stage('build') {
       steps {
         sh 'echo "Un paso sencillo de una linea"'
